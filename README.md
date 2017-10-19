@@ -40,7 +40,7 @@ npm i // If your using npm package manager
 # Running
 
 ```javascript
-yarn start // Start Dev server and play
+yarn start // Start Dev server and play... :-)
 ```
 
 # Production
@@ -49,3 +49,6 @@ To build for production, run:
 ```javascript
 npm run build
 ```
+
+# Note
+If your experiencing any issues and you can't run the program. Please check your nodejs installation. It's most likely not going to work on older version of nodejs. I would advice installing nodejs version v8.0.0
