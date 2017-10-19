@@ -13,13 +13,21 @@ Written in ReactJS + Redux + Firebase
 ### Twitter Bootstrap (Flatly custom theme)
 
 
-## Play with your friends or play with AI
+# Play with your friends or play with AI
 AI is using Minimax algorithim https://en.wikipedia.org/wiki/Minimax
 
 Let's see if you can beat em... :-)
 
 # Installation
-## If NodeJs is not installed yet, please get it from here [https://nodejs.org/en/](https://nodejs.org/en/)
+#### Clone this repository
+
+```javascript
+git clone https://github.com/belmer/X-Tic-Tac-Toe.git
+```
+
+#### If NodeJs is not installed yet, please get it from here [https://nodejs.org/en/](https://nodejs.org/en/)
+
+#### After nodejs installation run the following command
 
 ```javascript
 yarn install // To install all dependecies
