@@ -27,10 +27,10 @@ git clone https://github.com/belmer/X-Tic-Tac-Toe.git
 
 #### If NodeJs is not installed yet, please get it from here [https://nodejs.org/en/](https://nodejs.org/en/)
 
-#### After nodejs installation run the following command
+#### After nodejs installation run the following command:
 
 ```javascript
-yarn install // To install all dependecies
+yarn install // To install all dependecies or
 ```
 
 ```javascript
@@ -40,5 +40,12 @@ npm i // If your using npm package manager
 # Running
 
 ```javascript
-yarn start
+yarn start // Start Dev server and play
+```
+
+# Production
+To build for production, run:
+
+```javascript
+npm run build
 ```
