@@ -8,8 +8,13 @@ const Recent = ({ games })=> {
     return (<a href='#' className='list-group-item'>Yikes! Be the first game match.
               </a>)
   }
-  return Object.keys(games).reverse().slice(0, 5).map((k, i)=> {
-    const { player1, player2 } = games[k]
+  let recentList = Object.keys(games).map(key => games[key])
+  recentList = recentList.sort((a, b)=> {
+    return (new Date(a.created).getTime() > new Date(b.created).getTime() ? -1 : 1)
+  }).slice(0, 5)
+
+  return recentList.map((game, i)=> {
+    const { player1, player2 } = game
     const p1Name = player1.name ? player1.name : 'Player 1'
     const p2Name = player2.name ? player2.name : 'Player 2'
     return (<a key={`g-${i}`} href='#' className='list-group-item'>

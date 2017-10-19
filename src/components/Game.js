@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import Board from './Board'
-
+import AI from '../utils/AI'
 const PlayAgain = ({ onReplay })=> {
   return (
           <a href='#' onClick={onReplay} className='label label-info game-status'
@@ -57,7 +57,7 @@ const calculateWinner = (squares)=> {
 const initialGameData = {
   history: [
     {
-      squares: Array(9).fill(null)
+      squares: Array(9).fill(0)
     }
   ],
   stepNumber: 0,
@@ -67,9 +67,10 @@ class Game extends PureComponent {
   constructor() {
     super()
     this.state = Object.assign({}, initialGameData)
+    this.ai = new AI()
   }
 
-  handleClick(i) {
+  move(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1)
     const current = history[history.length - 1]
     const squares = current.squares.slice()
@@ -78,6 +79,7 @@ class Game extends PureComponent {
       return
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O'
+
     this.setState({
       history: history.concat([
         {
@@ -86,7 +88,24 @@ class Game extends PureComponent {
       ]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext
+    }, ()=> {
+      if (this.props.players.player2.name === 'AI') {
+        if (squares[i] === 'X') {
+          const newBoard = squares.map(player=> {
+            if (player === 'X') {
+              return 1
+            } else if (player === 'O') {
+              return 2
+            }
+            return 0
+          })
+          this.move(this.ai.search(newBoard))
+        }
+      }
     })
+  }
+  handleClick(i) {
+    this.move(i)
   }
 
   handleReplay() {

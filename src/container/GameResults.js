@@ -26,16 +26,20 @@ const DataRows = ({ games })=> {
       <td colSpan='5'>Yikes! Be the first game match.</td>
     </tr>)
   }
+  let newList = Object.keys(games).map(key => games[key])
+  newList = newList.sort((a, b)=> {
+    return (new Date(a.created).getTime() > new Date(b.created).getTime() ? -1 : 1)
+  })
 
-  return (Object.keys(games).reverse().map((k, i)=> (
+  return newList.map((game, i)=> (
       <tr key={`row-${i}`}>
           <td>{i}</td>
-          <td>{games[k].player1 ? games[k].player1.name : 'Player 1'}</td>
-          <td>{games[k].player2 ? games[k].player2.name : 'Player 2'}</td>
-          <td>{games[k].winner ? games[k].winner : 'N/A'}</td>
-          <td>{moment(games[k].created).calendar()}</td>
+          <td>{game.player1 ? game.player1.name : 'Player 1'}</td>
+          <td>{game.player2 ? game.player2.name : 'Player 2'}</td>
+          <td>{game.winner ? game.winner : 'N/A'}</td>
+          <td>{moment(game.created).calendar()}</td>
       </tr>
-  )))
+  ))
 }
 
 @firebaseConnect([ 'games' ])

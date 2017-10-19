@@ -38,9 +38,12 @@ class NewGame extends PureComponent {
     game[e.target.name].name = e.target.value
     this.setState({ game })
   }
-  handleSubmit(e) {
+  handleSubmit(name, e) {
     e.preventDefault()
     const newGame = Object.assign({}, this.state.game)
+    if (name && name === 'AI') {
+      newGame.player2.name = name
+    }
     newGame.created = new Date().toISOString()
     this.props.firebase.push('/games', newGame)
     .then((result)=> {
@@ -56,7 +59,7 @@ class NewGame extends PureComponent {
                 <h3 className='panel-title'>Enter player name or play with AI</h3>
               </div>
               <div className='panel-body'>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form onSubmit={this.handleSubmit.bind(this, null)}>
                   <PlayerInputField
                     onChange={this.handleInputChange.bind(this)}
                     symbol='fa-times' playerNo={1} name='player1'/>
@@ -66,7 +69,8 @@ class NewGame extends PureComponent {
 
                   <button type='submit' className='btn btn-primary btn-lg'
                    style={{ marginRight: '10px' }}>Start Game</button>
-                  <button type='submit' className='btn btn-info btn-lg'>Play with AI</button>
+                  <button onClick={this.handleSubmit.bind(this, 'AI')}
+                  className='btn btn-info btn-lg'>Play with AI</button>
                 </form>
               </div>
             </div>)
