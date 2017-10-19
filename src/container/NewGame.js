@@ -18,8 +18,8 @@ const PlayerInputField = ({ symbol, playerNo, name, onChange })=> {
           </div>)
 }
 const defaultGameValues = {
-  player1: { symbol: 'X' },
-  player2: { symbol: 'O' },
+  player1: { name: 'Player 1', symbol: 'X' },
+  player2: { name: 'Player 2', symbol: 'O' },
   status: 'started'
 }
 @firebaseConnect([ 'games' ])
