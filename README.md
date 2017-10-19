@@ -12,8 +12,10 @@ Written in ReactJS + Redux + Firebase
 ### Firebase
 ### Twitter Bootstrap (Flatly custom theme)
 
+
 ## Play with your friends or play with AI
 AI is using Minimax algorithim https://en.wikipedia.org/wiki/Minimax
+
 Let's see if you can beat em... :-)
 
 # Installation
