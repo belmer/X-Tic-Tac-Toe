@@ -27,7 +27,7 @@ const DataRows = ({ games })=> {
     </tr>)
   }
 
-  return (Object.keys(games).map((k, i)=> (
+  return (Object.keys(games).reverse().map((k, i)=> (
       <tr key={`row-${i}`}>
           <td>{i}</td>
           <td>{games[k].player1 ? games[k].player1.name : 'Player 1'}</td>

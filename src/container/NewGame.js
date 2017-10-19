@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { firebaseConnect, helpers } from 'react-redux-firebase'
-
 const { dataToJS } = helpers
 const PlayerInputField = ({ symbol, playerNo, name, onChange })=> {
   return (<div className='form-group'>

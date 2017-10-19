@@ -1,6 +1,7 @@
 import { START_GAME } from '../actionTypes'
 const INITIAL_STATE = {
-  match: null
+  match: null,
+  headerText: 'You can still play without having to enter your name. It will use default values'
 }
 
 export default function (state = INITIAL_STATE, action) {

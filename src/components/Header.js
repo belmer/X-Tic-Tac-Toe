@@ -6,8 +6,11 @@ const Header = ()=> {
               <h1>Tic Tac Toe</h1>
             </div>
             <div>
-              <p className='lead'>You can still play without having to enter your name.
-               It will use default values</p>
+               <blockquote className='blockquote-reverse'>
+                <p className='lead'>The people who are crazy enough to think
+               that they can change the world are the ones who do</p>
+                <small>- <cite title='Source Title'>Steve Jobs</cite></small>
+              </blockquote>
             </div>
           </div>)
 }
