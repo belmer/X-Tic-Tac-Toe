@@ -19,6 +19,9 @@ AI is using Minimax algorithim https://en.wikipedia.org/wiki/Minimax
 
 Let's see if you can beat em... :-)
 
+# Demo
+## [Live Demo](https://belmer.github.io/)
+
 # Installation
 #### Clone this repository
 
