@@ -7,6 +7,7 @@ Written in ReactJS + Redux + Firebase
 # Stack
 ### Reactjs
 ### Redux
+### React-router v4
 ### ES6
 ### NodeJs
 ### Firebase
@@ -42,6 +43,9 @@ npm i // If your using npm package manager
 ```javascript
 yarn start // Start Dev server and play... :-)
 ```
+
+It should display which port is running. Usually at port 3000. On your browser visit http://localhost:300
+Note: Best viewed on Chrome browser... :-)
 
 # Production
 To build for production, run:
