@@ -30,7 +30,8 @@ export default function register() {
     }
 
     window.addEventListener('load', () => {
-      const swUrl = `js/service-worker.js`
+      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`
+      // const swUrl = `/js/src/tictac/service-worker.js`
 
       if (!isLocalhost) {
         // Is not local host. Just register service worker
