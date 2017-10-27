@@ -4,7 +4,7 @@
 
 Written in ReactJS + Redux + Firebase
 
-## [Live Demo](https://belmer.github.io/)
+## [Live Demo](https://belmer0tictactoe.github.io/)
 
 
 # Stack
